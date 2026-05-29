@@ -269,21 +269,20 @@ ul {
     margin-right: auto;
 }
 
-/* --- Gallery (Masonry CSS) --- */
+/* --- Gallery Grid CSS --- */
 .gallery-section {
     padding: var(--section-pad) 0;
     background-color: var(--bg-base);
 }
 
-.masonry-grid {
-    column-count: 3;
-    column-gap: 20px;
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
     width: 100%;
 }
 
 .gallery-item {
-    break-inside: avoid;
-    margin-bottom: 20px;
     position: relative;
     border-radius: var(--radius-md);
     overflow: hidden;
@@ -293,20 +292,20 @@ ul {
 
 .placeholder-img {
     width: 100%;
-    /* Create varying heights for masonry effect */
+    aspect-ratio: 3 / 4;
     background: linear-gradient(135deg, #1e1e26, #14141a);
     object-fit: cover;
 }
 
-.c-1 { height: 400px; background: linear-gradient(135deg, #1f1429, #14141a); }
-.c-2 { height: 300px; background: linear-gradient(135deg, #141d29, #14141a); }
-.c-3 { height: 500px; background: linear-gradient(135deg, #29141f, #14141a); }
-.c-4 { height: 350px; background: linear-gradient(135deg, #182914, #14141a); }
-.c-5 { height: 450px; background: linear-gradient(135deg, #292414, #14141a); }
-.c-6 { height: 280px; background: linear-gradient(135deg, #142829, #14141a); }
-.c-7 { height: 420px; background: linear-gradient(135deg, #261429, #14141a); }
-.c-8 { height: 380px; background: linear-gradient(135deg, #141429, #14141a); }
-.c-9 { height: 480px; background: linear-gradient(135deg, #291914, #14141a); }
+.c-1 { background: linear-gradient(135deg, #1f1429, #14141a); }
+.c-2 { background: linear-gradient(135deg, #141d29, #14141a); }
+.c-3 { background: linear-gradient(135deg, #29141f, #14141a); }
+.c-4 { background: linear-gradient(135deg, #182914, #14141a); }
+.c-5 { background: linear-gradient(135deg, #292414, #14141a); }
+.c-6 { background: linear-gradient(135deg, #142829, #14141a); }
+.c-7 { background: linear-gradient(135deg, #261429, #14141a); }
+.c-8 { background: linear-gradient(135deg, #141429, #14141a); }
+.c-9 { background: linear-gradient(135deg, #291914, #14141a); }
 
 
 .gallery-item .overlay {
@@ -653,7 +652,7 @@ footer {
     .hero h1 { font-size: 3rem; }
     .hero p { font-size: 1.1rem; }
     
-    .masonry-grid { column-count: 2; }
+    .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
     
     .about-grid, .contact-wrapper {
         grid-template-columns: 1fr;
@@ -678,7 +677,7 @@ footer {
     }
     
     .hero h1 { font-size: 2.2rem; }
-    .masonry-grid { column-count: 1; }
+    .portfolio-grid { grid-template-columns: 1fr; }
     
     .pricing-card {
         padding: 30px 20px;
